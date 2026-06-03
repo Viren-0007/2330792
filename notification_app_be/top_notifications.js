@@ -6,7 +6,7 @@ const DEFAULT_WEIGHTS = {
   results: 1,
 };
 
-const WEIGHT_FACTOR = 1e12; // large enough so weight dominates recency
+const WEIGHT_FACTOR = 1e12;
 
 function computeScore(notification, weights = DEFAULT_WEIGHTS) {
   const weight = weights[notification.category] || 0;
@@ -15,8 +15,6 @@ function computeScore(notification, weights = DEFAULT_WEIGHTS) {
     : Date.parse(notification.timestamp || '') || 0;
   return weight * WEIGHT_FACTOR + ts;
 }
-
-// Simple min-heap implementation for objects with a .score numeric key
 class MinHeap {
   constructor() {
     this.heap = [];
