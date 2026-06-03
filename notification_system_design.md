@@ -41,6 +41,8 @@
 **How to run (example)**
 - Ensure Node 18+ (for global `fetch`) or install a fetch polyfill.
 - Set the environment variable `NOTIF_API_URL` to the Notification API base URL.
+  - Default Notification API for assessment: `http://4.224.186.213/evaluation-services/notifications`.
+  - You may override by setting `NOTIF_API_URL`.
 
 ```bash
 # from workspace root
