@@ -29,15 +29,16 @@ async function sendLogToServer(payload, url = DEFAULT_TEST_SERVER_URL) {
   }
   return response.json().catch(() => null);
 }
-async function Log(stack, level, package, message){
-    const payLoad = {
-        timestamp: newDate().toISOString(),
-        stack: normalizeString(stack, 'stack'),
-        level: normalizeString(level, 'level'),
-        package: normalizeString(package, 'package'),
-        message: normalizeString(message, 'message')
-    };
-    return sendLogToServer(payLoad);
+async function Log(stack, level, pkg, message) {
+  const payLoad = {
+    timestamp: new Date().toISOString(),
+    stack: normalizeString(stack, 'stack'),
+    level: normalizeString(level, 'level'),
+    package: normalizeString(pkg, 'package'),
+    message: normalizeString(message, 'message'),
+  };
+
+  return sendLogToServer(payLoad);
 }
 module.exports = {
     Log,
