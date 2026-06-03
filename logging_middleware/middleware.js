@@ -1,4 +1,4 @@
-const DEFAULT_TEST_SERVER_URL = process.env.TEST_LOG_SERVER_URL || 'http://localhost:4000/log';
+const DEFAULT_TEST_SERVER_URL = process.env.TEST_LOG_SERVER_URL || 'http://localhost:3000/log';
 
 function normalizeString(value, fieldName) {
   if (typeof value !== 'string') {
